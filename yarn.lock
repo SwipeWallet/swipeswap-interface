@@ -3126,6 +3126,46 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@swipewallet/default-token-list@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@swipewallet/default-token-list/-/default-token-list-2.0.1.tgz#80efb5899b7b876596dc8a157a64e642644fa4d9"
+  integrity sha512-Um/OtLLea6zQ0B0F/KJvLUwMhA6Opy/J0Cki2+Evm7wOEmpsuA7a+t9MHkCsLy5YXsWIGdaltrjDOToJwDzcxA==
+
+"@swipewallet/swipe-swap@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@swipewallet/swipe-swap/-/swipe-swap-1.4.1.tgz#76e671974dca1bb62c01eb33e63bf08578eb7e64"
+  integrity sha512-e6Uup/CE/MmJbC0QfoDkxXhGoXrXAo7QX3dnV/0Qxsa3u4jKy0BAHNEkmFhP1wK3sCmEvgU10bayKFkubvl0QA==
+
+"@swipewallet/swipeswap-data@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@swipewallet/swipeswap-data/-/swipeswap-data-1.0.0.tgz#a880a4b80d3f0e263a8b3a6915f46abcf3e33eee"
+  integrity sha512-BaFaM+BWcrWyMuhI6gDyobKPvx6xzB1k9n+py5pN4bFaS0pzwrCd9FMO/1y7bBb8LqGaX4rEjpxJAjR2Z+wY+w==
+  dependencies:
+    bluebird "^3.7.2"
+    commander "6.1.0"
+    csv-stringify "5.3.3"
+    date-fns "^2.17.0"
+    graph-results-pager "~1.0.0"
+    graphql "14.5.8"
+    graphql-request "^3.4.0"
+    isomorphic-ws "^4.0.1"
+    node-fetch "2.6.0"
+    subscriptions-transport-ws "0.9.16"
+    ws "7.2.0"
+
+"@swipewallet/swipeswap-sdk@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@swipewallet/swipeswap-sdk/-/swipeswap-sdk-1.0.1.tgz#78bed8fb349c3567bc1d2dde4b863dd521507fea"
+  integrity sha512-OIb195IqhwB0iayOenfdBxx1hKqyibZhrYTmd9t9vTpn9eN6UqJ3tB86DHCJgGp3Mhm/01oujEvOZEWqLiCS7w==
+  dependencies:
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -10472,7 +10512,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-graph-results-pager@LufyCZ/graph-results-pager#types:
+graph-results-pager@LufyCZ/graph-results-pager#types, graph-results-pager@~1.0.0:
   version "1.0.3"
   resolved "https://codeload.github.com/LufyCZ/graph-results-pager/tar.gz/d8667ea547e338b09026acef3e5b25da3e7208b7"
   dependencies:
