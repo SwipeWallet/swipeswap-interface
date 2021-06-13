@@ -51,9 +51,10 @@ const EMPTY_LIST: TokenAddressMap = {
     [ChainId.BSC]: {},
     [ChainId.BSC_TESTNET]: {},
     [ChainId.ARBITRUM]: {},
-    [ChainId.MOONBASE]: {},
+    [ChainId.ARBITRUM_TESTNET]: {},
+    [ChainId.MOONBEAM_TESTNET]: {},
     [ChainId.AVALANCHE]: {},
-    [ChainId.FUJI]: {},
+    [ChainId.AVALANCHE_TESTNET]: {},
     [ChainId.HECO]: {},
     [ChainId.HECO_TESTNET]: {},
     [ChainId.HARMONY]: {},
@@ -122,7 +123,8 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
         100: { ...map1[100], ...map2[100] }, // xdai
         56: { ...map1[56], ...map2[56] }, // bsc
         97: { ...map1[97], ...map2[97] }, // bsc testnet
-        79377087078960: { ...map1[79377087078960], ...map2[79377087078960] }, // arbitrum
+        42161: { ...map1[42161], ...map2[42161] }, // arbitrum
+        79377087078960: { ...map1[79377087078960], ...map2[79377087078960] }, // arbitrum testnet
         1287: { ...map1[1287], ...map2[1287] }, // moonbase
         128: { ...map1[128], ...map2[128] }, // heco
         256: { ...map1[256], ...map2[256] }, // heco testnet

@@ -425,7 +425,7 @@ const chains: ChainObject = {
         chainName: 'arbitrum',
         builder: builders.arbitrum
     },
-    [ChainId.MOONBASE]: {
+    [ChainId.MOONBEAM_TESTNET]: {
         chainName: '',
         builder: builders.moonbase
     },
@@ -433,7 +433,7 @@ const chains: ChainObject = {
         chainName: '',
         builder: builders.avalanche
     },
-    [ChainId.FUJI]: {
+    [ChainId.AVALANCHE_TESTNET]: {
         chainName: 'test',
         builder: builders.avalanche
     },

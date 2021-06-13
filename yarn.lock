@@ -2993,10 +2993,10 @@
   resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-6.28.0.tgz#a6e75c1d73da82bf334e084cb659884ccfb6fd8f"
   integrity sha512-O2mFnwamdSCnhVyrg49lxSphvunmN87mBvBhtGKI/wyofl9w7sGCN89a8cNE4GT4FKH/Knni7VD3nLdNvYLnjA==
 
-"@sushiswap/sdk@5.0.0-canary.7":
-  version "5.0.0-canary.7"
-  resolved "https://registry.yarnpkg.com/@sushiswap/sdk/-/sdk-5.0.0-canary.7.tgz#a7179314300dc98644a1b30446f0f7fe9c0e693f"
-  integrity sha512-21IsU1yB+RETZZs2ORoMLNTRNYNln10bDTVwX7wpntCCdjeACnOyYb/I8yli2cNaajJWPZt62gGoCP5ntndSyg==
+"@sushiswap/sdk@5.0.0-canary.12":
+  version "5.0.0-canary.12"
+  resolved "https://registry.yarnpkg.com/@sushiswap/sdk/-/sdk-5.0.0-canary.12.tgz#d92f77dae8998f0a26a51d01fff12e3eaa21a474"
+  integrity sha512-74BtHjO9ejzqNVk0btMd+WrJEI4B8E1vb9Ec2suhfNavDR3PRg1vtos8DynvcleALNZg5R8uTlYzE5G7nl/nFw==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
