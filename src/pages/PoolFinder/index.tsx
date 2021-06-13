@@ -1,4 +1,4 @@
-import { Currency, JSBI, TokenAmount } from '@sushiswap/sdk'
+import { Currency, JSBI, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'

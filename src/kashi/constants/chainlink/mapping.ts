@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 
 export type ChainlinkMappingList = {
     readonly [address: string]: {

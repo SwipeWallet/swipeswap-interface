@@ -1,5 +1,5 @@
 import React from 'react'
-// import { PancakeV1Pair, PancakeV2Pair } from '@sushiswap/sdk'
+// import { PancakeV1Pair, PancakeV2Pair } from '@swipewallet/swipeswap-sdk'
 
 export default function Test() {
     return <div></div>

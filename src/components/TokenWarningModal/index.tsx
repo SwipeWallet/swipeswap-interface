@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@swipewallet/swipeswap-sdk'
 import { ImportToken } from 'components/SearchModal/ImportToken'
 import React, { useCallback } from 'react'
 import Modal from '../Modal'

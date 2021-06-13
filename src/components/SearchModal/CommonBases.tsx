@@ -1,4 +1,4 @@
-import { ChainId, Currency, currencyEquals, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, currencyEquals, Token } from '@swipewallet/swipeswap-sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import styled from 'styled-components'

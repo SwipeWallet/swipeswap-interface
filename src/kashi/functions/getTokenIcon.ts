@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 import INCH from '../../assets/kashi/tokens/1inch-square.jpg'
 import AAVE from '../../assets/kashi/tokens/aave-square.jpg'
 // todo: move these into sushiswap/assets/square

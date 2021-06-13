@@ -2,7 +2,7 @@ import { blockClient, blockClient_matic } from './client'
 import { blockQuery, blocksQuery } from './queries'
 import { getUnixTime, startOfHour, startOfMinute, startOfSecond, subDays, subHours } from 'date-fns'
 
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 
 export async function getOneDayBlock(chainId: ChainId = 1): Promise<{ number: number }> {

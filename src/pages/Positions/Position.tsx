@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { JSBI, Pair, Percent, TokenAmount } from '@sushiswap/sdk'
+import { JSBI, Pair, Percent, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 import { useTokenBalance } from '../../state/wallet/hooks'

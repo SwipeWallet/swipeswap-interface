@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { WETH } from '@sushiswap/sdk'
+import { WETH } from '@swipewallet/swipeswap-sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import { Alert, Button, Checkbox, Dots } from 'components'

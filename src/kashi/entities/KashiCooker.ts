@@ -1,5 +1,5 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
-import { ChainId, WETH } from '@sushiswap/sdk'
+import { ChainId, WETH } from '@swipewallet/swipeswap-sdk'
 import { Contract, ethers } from 'ethers'
 import { ZERO, e10, maximum, minimum, toElastic } from 'kashi/functions'
 import { getProviderOrSigner, getSigner } from 'utils'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI } from '@swipewallet/swipeswap-sdk'
 import { MIN_ETH } from '../constants'
 
 /**

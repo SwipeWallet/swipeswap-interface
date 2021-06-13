@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { MASTERCHEF_ADDRESS, Token } from '@sushiswap/sdk'
+import { MASTERCHEF_ADDRESS, Token } from '@swipewallet/swipeswap-sdk'
 import { Input as NumericalInput } from '../../../../components/NumericalInput'
 import { Fraction } from '../../../../entities'
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'

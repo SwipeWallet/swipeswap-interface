@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@sushiswap/sdk'
+import { ChainId, JSBI, Token, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { BigNumber, ethers } from 'ethers'
 import { computeUniCirculation } from './computeUniCirculation'
 

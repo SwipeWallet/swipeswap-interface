@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from '@sushiswap/sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from '@swipewallet/swipeswap-sdk'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'

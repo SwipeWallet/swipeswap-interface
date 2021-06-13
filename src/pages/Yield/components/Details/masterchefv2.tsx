@@ -1,7 +1,7 @@
 import { ApprovalState, useApproveCallback } from '../../../../hooks/useApproveCallback'
 import { Link, useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
-import { Token, WETH } from '@sushiswap/sdk'
+import { Token, WETH } from '@swipewallet/swipeswap-sdk'
 import { Trans, t } from '@lingui/macro'
 import { formattedNum, isAddress, isAddressString, isWETH } from '../../../../utils'
 

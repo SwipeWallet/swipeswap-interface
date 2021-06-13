@@ -1,4 +1,4 @@
-import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@swipewallet/swipeswap-sdk'
 import { useMemo } from 'react'
 import { USDC } from '../constants'
 import { PairState, usePairs } from '../data/Reserves'

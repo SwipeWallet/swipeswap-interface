@@ -5,14 +5,17 @@ import {
 import {
     BAR_ADDRESS,
     ChainId,
-    FACTORY_ADDRESS,
     MAKER_ADDRESS,
     MASTERCHEF_ADDRESS,
-    ROUTER_ADDRESS,
     SUSHI_ADDRESS,
     TIMELOCK_ADDRESS,
-    WETH
 } from '@sushiswap/sdk'
+import {
+    FACTORY_ADDRESS,
+    ROUTER_ADDRESS,
+    SWIPE_ADDRESS,
+    WETH
+} from '@swipewallet/swipeswap-sdk'
 import {
     BENTOBOX_ADDRESS,
     BORING_HELPER_ADDRESS,

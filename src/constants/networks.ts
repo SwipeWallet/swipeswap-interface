@@ -1,7 +1,7 @@
 import Arbitrum from '../assets/networks/arbitrum-network.jpg'
 import Avalanche from '../assets/networks/avalanche-network.jpg'
 import Bsc from '../assets/networks/bsc-network.jpg'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 import Fantom from '../assets/networks/fantom-network.jpg'
 import Goerli from '../assets/networks/goerli-network.jpg'
 import Harmony from '../assets/networks/harmonyone-network.jpg'

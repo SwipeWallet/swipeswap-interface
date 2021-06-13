@@ -1,4 +1,4 @@
-import { Price } from '@sushiswap/sdk'
+import { Price } from '@swipewallet/swipeswap-sdk'
 import React, { useContext } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@sushiswap/sdk'
+import { JSBI, Token, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { BigNumber } from 'ethers'
 import { STAKING_GENESIS } from '../state/stake/hooks'
 

@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@swipewallet/swipeswap-sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'

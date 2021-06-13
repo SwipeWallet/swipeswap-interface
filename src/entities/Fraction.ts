@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { One, Zero } from '@ethersproject/constants'
-import { Fraction as SDKFraction } from '@sushiswap/sdk'
+import { Fraction as SDKFraction } from '@swipewallet/swipeswap-sdk'
 import { formatBalance, isEmptyValue, parseBalance } from '../utils'
 
 class Fraction {

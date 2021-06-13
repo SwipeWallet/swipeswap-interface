@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Token, TokenAmount } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI, Token, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { useMemo } from 'react'
 import ERC20_INTERFACE from '../../constants/abis/erc20'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'

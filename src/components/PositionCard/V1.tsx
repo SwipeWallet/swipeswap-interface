@@ -1,4 +1,4 @@
-import { Token, TokenAmount, WETH } from '@sushiswap/sdk'
+import { Token, TokenAmount, WETH } from '@swipewallet/swipeswap-sdk'
 import React, { useContext } from 'react'
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
 import { Text } from 'rebass'

@@ -1,6 +1,6 @@
 import { CHAINLINK_MAPPING, CHAINLINK_ORACLE_ADDRESS } from 'kashi/constants'
 
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 import { e10 } from 'kashi/functions/math'
 import { ethers } from 'ethers'
 

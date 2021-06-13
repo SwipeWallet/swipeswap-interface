@@ -1,4 +1,4 @@
-import { ChainId, Token, TokenAmount } from '@sushiswap/sdk'
+import { ChainId, Token, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { useBoringHelperContract, useDashboardContract, useQuickSwapFactoryContract } from 'hooks/useContract'
 import { useCallback, useEffect, useRef, useState } from 'react'
 

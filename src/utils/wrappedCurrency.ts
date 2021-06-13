@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Token, TokenAmount, WETH } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, Token, TokenAmount, WETH } from '@swipewallet/swipeswap-sdk'
 
 export function wrappedCurrency(currency: Currency | undefined, chainId: ChainId | undefined): Token | undefined {
     return chainId && currency === Currency.ETHER ? WETH[chainId] : currency instanceof Token ? currency : undefined

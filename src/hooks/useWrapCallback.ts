@@ -1,4 +1,4 @@
-import { Currency, WETH, currencyEquals } from '@sushiswap/sdk'
+import { Currency, WETH, currencyEquals } from '@swipewallet/swipeswap-sdk'
 
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../state/swap/hooks'

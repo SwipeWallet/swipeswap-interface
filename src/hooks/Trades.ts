@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Pair, Token, Trade } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, Pair, Token, Trade } from '@swipewallet/swipeswap-sdk'
 import { useMemo } from 'react'
 import { useUserSingleHopOnly } from 'state/user/hooks'
 import { isTradeBetter } from 'utils/trades'

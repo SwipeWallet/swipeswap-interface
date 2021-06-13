@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@swipewallet/swipeswap-sdk'
 import { useMemo } from 'react'
 import { isAddress } from '../../utils'
 

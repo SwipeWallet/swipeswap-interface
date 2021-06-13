@@ -1,4 +1,4 @@
-import { JSBI, Pair, Percent, TokenAmount } from '@sushiswap/sdk'
+import { JSBI, Pair, Percent, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { darken, transparentize } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'

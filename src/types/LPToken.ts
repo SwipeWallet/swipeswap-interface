@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@sushiswap/sdk'
+import { Token, TokenAmount } from '@swipewallet/swipeswap-sdk'
 import { ethers } from 'ethers'
 
 export default interface LPToken {

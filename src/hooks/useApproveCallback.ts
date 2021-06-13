@@ -1,6 +1,6 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, CurrencyAmount, TokenAmount, Trade } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, TokenAmount, Trade } from '@swipewallet/swipeswap-sdk'
 import { useCallback, useMemo } from 'react'
 import { useTokenAllowance } from '../data/Allowances'
 import { Field } from '../state/swap/actions'

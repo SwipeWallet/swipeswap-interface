@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@swipewallet/swipeswap-sdk'
 
 export function currencyId(currency: Currency): string {
     if (currency === Currency.ETHER) return 'ETH'

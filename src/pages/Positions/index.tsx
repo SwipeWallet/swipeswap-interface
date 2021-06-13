@@ -8,7 +8,7 @@ import { ExternalLink, User } from 'react-feather'
 import { Dots } from 'components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useETHBalances } from 'state/wallet/hooks'
-import { Currency } from '@sushiswap/sdk'
+import { Currency } from '@swipewallet/swipeswap-sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 

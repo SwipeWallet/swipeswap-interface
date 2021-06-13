@@ -13,7 +13,7 @@ import {
     pairTimeTravelQuery,
     miniChefPoolQuery
 } from 'apollo/queries'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@swipewallet/swipeswap-sdk'
 //import Fraction from '../../../entities/Fraction'
 //import { resetIdCounter } from 'react-tabs'
 //import { apys } from '@lufycz/sushi-data/dist/sushi/queries/masterchef'
