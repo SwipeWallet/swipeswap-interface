@@ -1,7 +1,7 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ArrowDown, Plus } from 'react-feather'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, Percent, WETH, currencyEquals } from '@sushiswap/sdk'
 import React, { useCallback, useContext, useMemo, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 import { Trans, t } from '@lingui/macro'
@@ -231,8 +231,8 @@ export default function RemoveLiquidity({
         const liquidityAmount = parsedAmounts[Field.LIQUIDITY]
         if (!liquidityAmount) throw new Error('missing liquidity amount')
 
-        const currencyBIsETH = currencyB === ETHER
-        const oneCurrencyIsETH = currencyA === ETHER || currencyBIsETH
+        const currencyBIsETH = currencyB === Currency.ETHER
+        const oneCurrencyIsETH = currencyA === Currency.ETHER || currencyBIsETH
 
         if (!tokenA || !tokenB) throw new Error('could not wrap')
 
@@ -458,7 +458,7 @@ export default function RemoveLiquidity({
         [onUserInput]
     )
 
-    const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
+    const oneCurrencyIsETH = currencyA === Currency.ETHER || currencyB === Currency.ETHER
     const oneCurrencyIsWETH = Boolean(
         chainId &&
             ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||

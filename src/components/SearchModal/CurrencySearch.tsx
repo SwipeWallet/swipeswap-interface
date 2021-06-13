@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@sushiswap/sdk'
 import useDebounce from 'hooks/useDebounce'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
@@ -127,7 +127,7 @@ export function CurrencySearch({
             if (e.key === 'Enter') {
                 const s = debouncedQuery.toLowerCase().trim()
                 if (s === 'eth') {
-                    handleCurrencySelect(ETHER)
+                    handleCurrencySelect(Currency.ETHER)
                 } else if (filteredSortedTokens.length > 0) {
                     if (
                         filteredSortedTokens[0].symbol?.toLowerCase() === debouncedQuery.trim().toLowerCase() ||

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, currencyEquals, ETHER, WETH } from '@sushiswap/sdk'
+import { Currency, currencyEquals, WETH } from '@sushiswap/sdk'
 import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { AutoRow, RowBetween } from '../../components/Row'
@@ -38,8 +38,8 @@ export default function RemoveLiquidityReceiveDetails({
                             {hasWETH ? (
                                 <StyledInternalLink
                                     to={`/remove/${
-                                        currencyA === ETHER ? WETH[chainId].address : currencyId(currencyA)
-                                    }/${currencyB === ETHER ? WETH[chainId].address : currencyId(currencyB)}`}
+                                        currencyA === Currency.ETHER ? WETH[chainId].address : currencyId(currencyA)
+                                    }/${currencyB === Currency.ETHER ? WETH[chainId].address : currencyId(currencyB)}`}
                                 >
                                     Receive W{Currency.getNativeCurrencySymbol(chainId)}
                                 </StyledInternalLink>

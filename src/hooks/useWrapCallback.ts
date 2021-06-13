@@ -1,4 +1,4 @@
-import { Currency, ETHER, WETH, currencyEquals } from '@sushiswap/sdk'
+import { Currency, WETH, currencyEquals } from '@sushiswap/sdk'
 
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../state/swap/hooks'
@@ -40,7 +40,7 @@ export default function useWrapCallback(
 
         const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
-        if (inputCurrency === ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
+        if (inputCurrency === Currency.ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
             return {
                 wrapType: WrapType.WRAP,
                 execute:
@@ -64,7 +64,7 @@ export default function useWrapCallback(
                     ? undefined
                     : i18n._(t`Insufficient ${Currency.getNativeCurrencySymbol(chainId)} balance`)
             }
-        } else if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === ETHER) {
+        } else if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === Currency.ETHER) {
             return {
                 wrapType: WrapType.UNWRAP,
                 execute:

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, currencyEquals, Token } from '@sushiswap/sdk'
 import { LightGreyCard } from 'components/CardLegacy'
 import QuestionHelper from 'components/QuestionHelper'
 import useTheme from 'hooks/useTheme'
@@ -23,7 +23,7 @@ import ImportRow from './ImportRow'
 import { MenuItem } from './styleds'
 
 function currencyKey(currency: Currency): string {
-    return currency instanceof Token ? currency.address : currency === ETHER ? 'ETHER' : ''
+    return currency instanceof Token ? currency.address : currency === Currency.ETHER ? 'ETHER' : ''
 }
 
 const StyledBalanceText = styled(Text)`

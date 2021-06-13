@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, ETHER, JSBI, Percent, ROUTER_ADDRESS, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Percent, ROUTER_ADDRESS, Token } from '@sushiswap/sdk'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 
 import { AddressZero } from '@ethersproject/constants'
@@ -537,6 +537,6 @@ export function escapeRegExp(string: string): string {
 }
 
 export function isTokenOnList(defaultTokens: TokenAddressMap, currency?: Currency): boolean {
-    if (currency === ETHER) return true
+    if (currency === Currency.ETHER) return true
     return Boolean(currency instanceof Token && defaultTokens[currency.chainId]?.[currency.address])
 }
