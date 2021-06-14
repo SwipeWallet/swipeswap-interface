@@ -155,7 +155,7 @@ export default function Pool() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Pool`)} | Sushi</title>
+                <title>{i18n._(t`Pool`)} | Swipe</title>
             </Helmet>
             <div className="bg-dark-900 w-full max-w-2xl rounded shadow-liquidity-purple-glow">
                 <ExchangeHeader />

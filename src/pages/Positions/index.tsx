@@ -30,7 +30,7 @@ export default function Positions() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Positions`)} | Sushi</title>
+                <title>{i18n._(t`Positions`)} | Swipe</title>
             </Helmet>
 
             {/* <div className="w-full max-w-2xl">

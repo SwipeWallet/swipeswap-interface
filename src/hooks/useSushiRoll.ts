@@ -4,12 +4,12 @@ import { ethers } from 'ethers'
 import { useCallback } from 'react'
 import ReactGA from 'react-ga'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
-import { useSushiRollContract } from '../hooks/useContract'
+import { useSwipeRollContract } from '../hooks/useContract'
 import LPToken from '../types/LPToken'
 
 const useSushiRoll = (version: 'v1' | 'v2' = 'v2') => {
     const { chainId, library, account } = useActiveWeb3React()
-    const sushiRoll = useSushiRollContract(version)
+    const sushiRoll = useSwipeRollContract(version)
     const ttl = 60 * 20
 
     let from = ''

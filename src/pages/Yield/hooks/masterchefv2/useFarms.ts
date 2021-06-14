@@ -12,7 +12,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ChainId } from '@swipewallet/swipeswap-sdk'
 import orderBy from 'lodash/orderBy'
-import sushiData from '@sushiswap/sushi-data'
+import swipeData from '@swipewallet/swipeswap-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 
@@ -35,12 +35,12 @@ const useFarms = () => {
                 query: liquidityPositionSubsetQuery,
                 variables: { user: String('0xEF0881eC094552b2e128Cf945EF17a6752B4Ec5d').toLowerCase() } //masterchefv2
             }),
-            sushiData.sushi.priceUSD(),
+            swipeData.swipe.priceUSD(),
             exchange.query({
                 query: tokenQuery,
                 variables: { id: String('0xdbdb4d16eda451d0503b854cf79d55697f90c8df').toLowerCase() } // alcx
             }),
-            sushiData.exchange.ethPrice(),
+            swipeData.exchange.ethPrice(),
             getAverageBlockTime()
         ])
 
@@ -72,10 +72,10 @@ const useFarms = () => {
             }
         })
         const liquidityPositions = results[1]?.data.liquidityPositions
-        const sushiPrice = results[2]
+        const sxpPrice = results[2]
         const pairs = pairsQuery?.data.pairs
         const ethPrice = results[4]
-        const alcxPrice = results[3].data.token.derivedETH * ethPrice
+        const alcxPrice = results[3].data.token?.derivedETH * ethPrice
         const averageBlockTime = results[5]
 
         const farms = pools
@@ -105,7 +105,7 @@ const useFarms = () => {
 
                 const blocksPerHour = 3600 / Number(averageBlockTime)
                 const roiPerBlock =
-                    (rewardPerBlock * sushiPrice) / balanceUSD + (secondaryRewardPerBlock * alcxPrice) / balanceUSD // TODO: include alcx pricing
+                    (rewardPerBlock * sxpPrice) / balanceUSD + (secondaryRewardPerBlock * alcxPrice) / balanceUSD // TODO: include alcx pricing
                 const roiPerHour = roiPerBlock * blocksPerHour
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -126,17 +126,17 @@ const useFarms = () => {
                     slpBalance: pool.slpBalance,
                     liquidityPair: pair,
                     rewardTokens: [
-                        '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', //SUSHI on Mainnet
+                        '0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9', //SXP on Mainnet
                         '0xdBdb4d16EdA451D0503b854CF79D55697F90c8DF' // ALCX on Mainnet
                     ],
-                    sushiRewardPerDay: rewardPerDay,
+                    swipeRewardPerDay: rewardPerDay,
                     secondaryRewardPerDay: secondaryRewardPerDay,
                     roiPerBlock,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / sxpPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1

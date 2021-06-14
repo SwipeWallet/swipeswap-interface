@@ -9,7 +9,8 @@ export const blocklytics = new ApolloClient({
 
 export const masterchef = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/master-chef'
+        // uri: 'https://api.thegraph.com/subgraphs/name/sushiswap/master-chef'
+        uri: 'https://api.thegraph.com/subgraphs/name/swipewallet/swipeswap'
     }),
     cache: new InMemoryCache()
 })
@@ -49,7 +50,8 @@ export const client = new ApolloClient({
 
 export const exchange = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://api.thegraph.com/subgraphs/name/matthewlilley/exchange'
+        // uri: 'https://api.thegraph.com/subgraphs/name/matthewlilley/exchange'
+        uri: 'https://api.thegraph.com/subgraphs/name/swipewallet/exchange'
     }),
     cache: new InMemoryCache()
 })

@@ -46,7 +46,7 @@ function AppBar(): JSX.Element {
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <img src={Logo} alt="Sushi" className="h-10 w-auto" />
+                                        <img src={Logo} alt="Swipe" className="h-10 w-auto" />
                                     </div>
                                     <div className="hidden sm:block sm:ml-4">
                                         <div className="flex space-x-2">
@@ -71,7 +71,7 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Yield`)}
                                                 </NavLink>
                                             )}
-                                            {chainId === ChainId.MAINNET && (
+                                            {/* {chainId === ChainId.MAINNET && (
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
                                                     {i18n._(t`SushiBar`)}
                                                 </NavLink>
@@ -96,7 +96,7 @@ function AppBar(): JSX.Element {
                                                 <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                                     {i18n._(t`Vesting`)}
                                                 </NavLink>
-                                            )}
+                                            )} */}
                                             {chainId &&
                                                 [
                                                     ChainId.MAINNET,
@@ -118,7 +118,7 @@ function AppBar(): JSX.Element {
 
                                 <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
-                                        {chainId &&
+                                        {/* {chainId &&
                                             [ChainId.MAINNET].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
@@ -178,14 +178,14 @@ function AppBar(): JSX.Element {
                                                         </div>
                                                     </QuestionHelper>
                                                 </>
-                                            )}
+                                            )} */}
 
                                         {chainId &&
                                             [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add Sushi to your Metamask wallet`)}>
+                                                    <QuestionHelper text={i18n._(t`Add Swipe to your Metamask wallet`)}>
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
@@ -193,11 +193,11 @@ function AppBar(): JSX.Element {
                                                                 switch (chainId) {
                                                                     case ChainId.MAINNET:
                                                                         address =
-                                                                            '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2'
+                                                                            '0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9'
                                                                         break
                                                                     case ChainId.BSC:
                                                                         address =
-                                                                            '0x947950BcC74888a40Ffa2593C5798F11Fc9124C4'
+                                                                            '0x47bead2563dcbf3bf2c9407fea4dc236faba485a'
                                                                         break
                                                                     case ChainId.MATIC:
                                                                         address =
@@ -208,10 +208,10 @@ function AppBar(): JSX.Element {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address: address,
-                                                                        symbol: 'SUSHI',
+                                                                        symbol: 'SXP',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png'
+                                                                            'https://raw.githubusercontent.com/SwipeWallet/assets/master/blockchains/ethereum/assets/0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9/logo.png'
                                                                     }
                                                                 }
 
@@ -228,7 +228,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added SUSHI to MetaMask'
+                                                                                    'Successfully added SXP to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -239,7 +239,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/sushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/tokens/sxp-square.jpg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -346,7 +346,7 @@ function AppBar(): JSX.Element {
                                         {i18n._(t`Yield`)}
                                     </NavLink>
                                 )}
-                                {chainId &&
+                                {/* {chainId &&
                                     [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
                                         <NavLink id={`kashi-nav-link`} to={'/bento/kashi/lend'}>
                                             {i18n._(t`Kashi Lending`)}
@@ -367,7 +367,7 @@ function AppBar(): JSX.Element {
                                     <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                         {i18n._(t`Vesting`)}
                                     </NavLink>
-                                )}
+                                )} */}
                                 {chainId &&
                                     [
                                         ChainId.MAINNET,

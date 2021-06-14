@@ -4,13 +4,13 @@ import {
 } from '../constants/abis/argent-wallet-detector'
 import {
     BAR_ADDRESS,
-    ChainId,
     MAKER_ADDRESS,
     MASTERCHEF_ADDRESS,
     SUSHI_ADDRESS,
     TIMELOCK_ADDRESS,
 } from '@sushiswap/sdk'
 import {
+    ChainId,
     FACTORY_ADDRESS,
     ROUTER_ADDRESS,
     SWIPE_ADDRESS,
@@ -55,6 +55,7 @@ import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import SUSHIROLL_ABI from '@sushiswap/core/abi/SushiRoll.json'
+import SWIPEROLL_ABI from '@swipewallet/swipe-swap/build/abi/SwipeRoll.json'
 import SUSHISWAP_MULTISWAPPER_ABI from '../constants/abis/sushiswapmultiswapper.json'
 import SUSHI_ABI from '../constants/abis/sushi.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
@@ -171,6 +172,11 @@ export function useMulticallContract(): Contract | null {
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
     const { chainId } = useActiveWeb3React()
     return useContract(chainId && SUSHI_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
+}
+
+export function useSwipeContract(withSignerIfPossible = true): Contract | null {
+    const { chainId } = useActiveWeb3React()
+    return useContract(chainId && SWIPE_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
@@ -373,7 +379,7 @@ export function usePancakeV1FactoryContract(): Contract | null {
     )
 }
 
-export function useSushiRollContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
+export function useSwipeRollContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
     const { chainId } = useActiveWeb3React()
     let address: string | undefined
     if (chainId) {
@@ -396,7 +402,7 @@ export function useSushiRollContract(version: 'v1' | 'v2' = 'v2'): Contract | nu
                 break
         }
     }
-    return useContract(address, SUSHIROLL_ABI, true)
+    return useContract(address, SWIPEROLL_ABI, true)
 }
 
 // export function usePancakeRollV1Contract(): Contract | null {

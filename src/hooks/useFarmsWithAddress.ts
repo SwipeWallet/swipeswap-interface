@@ -10,6 +10,7 @@ import { getAverageBlockTime } from 'apollo/getAverageBlockTime'
 import orderBy from 'lodash/orderBy'
 import range from 'lodash/range'
 import sushiData from '@sushiswap/sushi-data'
+import swipeData from '@swipewallet/swipeswap-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 
@@ -28,10 +29,10 @@ const useFarms = (address: string) => {
             exchange.query({
                 // results[1]
                 query: liquidityPositionSubsetQuery,
-                variables: { user: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd' }
+                variables: { user: '0x252dd6a11ef272a438a36d1a2370eed820099547' }
             }),
             getAverageBlockTime(), // results[2]
-            sushiData.sushi.priceUSD(), // results[3]
+            swipeData.swipe.priceUSD(), // results[3]
             sushiData.bentobox.kashiStakedInfo() //results[4]
         ])
         const pools = results[0]?.data.pools
@@ -47,7 +48,7 @@ const useFarms = (address: string) => {
 
         const liquidityPositions = results[1]?.data.liquidityPositions
         const averageBlockTime = results[2]
-        const sushiPrice = results[3]
+        const sxpPrice = results[3]
         const kashiPairs = results[4].filter(result => result !== undefined) // filter out undefined (not in onsen) from all kashiPairs
 
         const pairs = pairsQuery?.data.pairs
@@ -108,8 +109,8 @@ const useFarms = (address: string) => {
                     const reserveUSD = pair.reserveUSD > 0 ? pair.reserveUSD : 0.1
                     const balanceUSD = (balance / Number(totalSupply)) * Number(reserveUSD)
                     const rewardPerBlock =
-                        ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.sushiPerBlock) / 1e18
-                    const roiPerBlock = (rewardPerBlock * sushiPrice) / balanceUSD
+                        ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.swipePerBlock) / 1e18
+                    const roiPerBlock = (rewardPerBlock * sxpPrice) / balanceUSD
                     const roiPerHour = roiPerBlock * blocksPerHour
                     const roiPerDay = roiPerHour * 24
                     const roiPerMonth = roiPerDay * 30
@@ -125,7 +126,7 @@ const useFarms = (address: string) => {
                     //         poolBalance: pool.balance,
                     //         roiPerBlock: roiPerBlock,
                     //         rewardPerBlock: rewardPerBlock,
-                    //         sushiPrice: sushiPrice,
+                    //         sxpPrice: sxpPrice,
                     //         balanceUSD: balanceUSD
                     //     })
                     // }
@@ -144,7 +145,7 @@ const useFarms = (address: string) => {
                         roiPerDay,
                         roiPerMonth,
                         roiPerYear,
-                        rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                        rewardPerThousand: 1 * roiPerDay * (1000 / sxpPrice),
                         tvl: liquidityPosition?.liquidityTokenBalance
                             ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                             : 0.1

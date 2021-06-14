@@ -84,7 +84,7 @@ export default function PoolFinder() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Find Pool`)} | Sushi</title>
+                <title>{i18n._(t`Find Pool`)} | Swipe</title>
             </Helmet>
             <div className="relative w-full max-w-lg rounded bg-dark-900 shadow-liquidity-purple-glow">
                 <FindPoolTabs />

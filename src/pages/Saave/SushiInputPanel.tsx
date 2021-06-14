@@ -144,13 +144,13 @@ export default function CurrencyInputPanel({
 
     const { allowance, approve, saave } = useSaave()
 
-    const sushiBalanceBigInt = useTokenBalance('0x6b3595068778dd592e39a122f4f5a5cf09c90fe2')
+    const sushiBalanceBigInt = useTokenBalance('0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9')
     const sushiBalance = formatFromBalance(sushiBalanceBigInt?.value, sushiBalanceBigInt?.decimals)
     const decimals = sushiBalanceBigInt?.decimals
 
     console.log('sushi allowance:', allowance)
 
-    console.log('sushiBalance:', sushiBalance, sushiBalanceBigInt, decimals)
+    console.log('sxpBalance:', sushiBalance, sushiBalanceBigInt, decimals)
 
     // handle approval
     const [requestedApproval, setRequestedApproval] = useState(false)
@@ -208,7 +208,7 @@ export default function CurrencyInputPanel({
                                         fontSize={14}
                                         style={{ display: 'inline', cursor: 'pointer' }}
                                     >
-                                        {i18n._(t`SUSHI Balance: ${sushiBalance}`)}
+                                        {i18n._(t`SXP Balance: ${sushiBalance}`)}
                                     </TYPE.body>
                                 )}
                             </RowBetween>

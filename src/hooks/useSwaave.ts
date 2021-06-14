@@ -2,7 +2,7 @@ import { ethers } from 'ethers'
 import { useCallback, useEffect, useState } from 'react'
 import Fraction from '../entities/Fraction'
 import { useActiveWeb3React } from './useActiveWeb3React'
-import { useSushiBarContract, useSushiContract } from './useContract'
+import { useSushiBarContract, useSwipeContract } from './useContract'
 import { useTransactionAdder } from '../state/transactions/hooks'
 
 const { BigNumber } = ethers
@@ -10,7 +10,7 @@ const { BigNumber } = ethers
 const useSushiBar = () => {
     const { account } = useActiveWeb3React()
     const addTransaction = useTransactionAdder()
-    const sushiContract = useSushiContract(true) // withSigner
+    const swipeContract = useSwipeContract(true) // withSigner
     const barContract = useSushiBarContract(true) // withSigner
 
     const [allowance, setAllowance] = useState('0')
@@ -18,7 +18,7 @@ const useSushiBar = () => {
     const fetchAllowance = useCallback(async () => {
         if (account) {
             try {
-                const allowance = await sushiContract?.allowance(account, barContract?.address)
+                const allowance = await swipeContract?.allowance(account, barContract?.address)
                 const formatted = Fraction.from(BigNumber.from(allowance), BigNumber.from(10).pow(18)).toString()
                 setAllowance(formatted)
             } catch (error) {
@@ -26,24 +26,24 @@ const useSushiBar = () => {
                 throw error
             }
         }
-    }, [account, barContract, sushiContract])
+    }, [account, barContract, swipeContract])
 
     useEffect(() => {
-        if (account && barContract && sushiContract) {
+        if (account && barContract && swipeContract) {
             fetchAllowance()
         }
         const refreshInterval = setInterval(fetchAllowance, 10000)
         return () => clearInterval(refreshInterval)
-    }, [account, barContract, fetchAllowance, sushiContract])
+    }, [account, barContract, fetchAllowance, swipeContract])
 
     const approve = useCallback(async () => {
         try {
-            const tx = await sushiContract?.approve(barContract?.address, ethers.constants.MaxUint256.toString())
+            const tx = await swipeContract?.approve(barContract?.address, ethers.constants.MaxUint256.toString())
             return addTransaction(tx, { summary: 'Approve' })
         } catch (e) {
             return e
         }
-    }, [addTransaction, barContract, sushiContract])
+    }, [addTransaction, barContract, swipeContract])
 
     const enter = useCallback(
         // todo: this should be updated with BigNumber as opposed to string

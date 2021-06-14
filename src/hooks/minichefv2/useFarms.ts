@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import sushiData from '@sushiswap/sushi-data'
+import swipeData from '@swipewallet/swipeswap-data'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { useBoringHelperContract } from 'hooks/useContract'
 import orderBy from 'lodash/orderBy'
@@ -33,14 +33,14 @@ const useFarms = () => {
                 query: liquidityPositionSubsetQuery,
                 variables: { user: String('0x0769fd68dFb93167989C6f7254cd0D766Fb2841F').toLowerCase() } //minichef
             }),
-            sushiData.sushi.priceUSD(),
+            swipeData.swipe.priceUSD(),
             exchange_matic.query({
                 query: tokenQuery,
                 variables: { id: String('0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270').toLowerCase() } //matic
             }),
-            sushiData.exchange.ethPrice()
+            swipeData.exchange.ethPrice()
             //getAverageBlockTime(chainId),
-            //sushiData.exchange.token({ token_address: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0' }) // matic
+            //swipeData.exchange.token({ token_address: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0' }) // matic
         ])
 
         const pools = results[0]?.data.pools
@@ -70,7 +70,7 @@ const useFarms = () => {
         })
 
         const liquidityPositions = results[1]?.data.liquidityPositions
-        const sushiPrice = results[2]
+        const sxpPrice = results[2]
         //const averageBlockTime = results[3]
         const pairs = pairsQuery?.data.pairs
         const maticPrice = results[3].data.token.derivedETH * results[4]
@@ -115,10 +115,10 @@ const useFarms = () => {
                 // const secondaryRewardPerSecond = pool.rewarder.rewardPerSecond / 1e18
                 //console.log('rewardsPerDay:', rewardPerDay * 10, secondaryRewardPerDay * 10)
 
-                // const roiPerSecond = (rewardPerSecond * 2 * sushiPrice) / balanceUSD // *2 with matic rewards
+                // const roiPerSecond = (rewardPerSecond * 2 * sxpPrice) / balanceUSD // *2 with matic rewards
                 // console.log('rewardPerSecond:', rewardPerSecond)
                 // console.log('secondaryRewardPerSecond:', secondaryRewardPerSecond)
-                const roiPerSecond = (rewardPerSecond * sushiPrice + secondaryRewardPerSecond * maticPrice) / balanceUSD // *2 with matic rewards
+                const roiPerSecond = (rewardPerSecond * sxpPrice + secondaryRewardPerSecond * maticPrice) / balanceUSD // *2 with matic rewards
                 const roiPerHour = roiPerSecond * 3600
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -154,14 +154,14 @@ const useFarms = () => {
                         '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', //SUSHI on Matic
                         '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270' // MATIC on Matic
                     ],
-                    sushiRewardPerDay: rewardPerDay,
+                    swipeRewardPerDay: rewardPerDay,
                     secondaryRewardPerDay: secondaryRewardPerDay,
                     roiPerSecond,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / sxpPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1

@@ -8,6 +8,7 @@ import _ from 'lodash'
 import orderBy from 'lodash/orderBy'
 //import range from 'lodash/range'
 import sushiData from '@sushiswap/sushi-data'
+import swipeData from '@swipewallet/swipeswap-data'
 
 import { useActiveWeb3React } from '../../../../hooks/useActiveWeb3React'
 import { ChainId } from '@swipewallet/swipeswap-sdk'
@@ -24,10 +25,10 @@ const useFarms = () => {
             }),
             exchange.query({
                 query: liquidityPositionSubsetQuery,
-                variables: { user: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd' }
+                variables: { user: '0x252dd6a11ef272a438a36d1a2370eed820099547' }
             }),
             getAverageBlockTime(),
-            sushiData.sushi.priceUSD()
+            swipeData.swipe.priceUSD()
         ])
         const pools = results[0]?.data.pools
         const pairAddresses = pools
@@ -42,10 +43,12 @@ const useFarms = () => {
 
         const liquidityPositions = results[1]?.data.liquidityPositions
         const averageBlockTime = results[2]
-        const sushiPrice = results[3]
+        const sxpPrice = results[3]
 
         const pairs = pairsQuery?.data.pairs
 
+        console.log('liquidityPositions', liquidityPositions)
+        console.log('pairs', JSON.stringify(pairs))
         const farms = pools
             .filter((pool: any) => {
                 return !POOL_DENY.includes(pool?.id) && pairs.find((pair: any) => pair?.id === pool?.pair)
@@ -61,9 +64,9 @@ const useFarms = () => {
                 const reserveUSD = pair.reserveUSD > 0 ? pair.reserveUSD : 0.1
                 const balanceUSD = (balance / Number(totalSupply)) * Number(reserveUSD)
                 const rewardPerBlock =
-                    ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.sushiPerBlock) / 1e18
+                    ((pool.allocPoint / pool.owner.totalAllocPoint) * pool.owner.swipePerBlock) / 1e18
 
-                const roiPerBlock = (rewardPerBlock * sushiPrice) / balanceUSD
+                const roiPerBlock = (rewardPerBlock * sxpPrice) / balanceUSD
                 const roiPerHour = roiPerBlock * blocksPerHour
                 const roiPerDay = roiPerHour * 24
                 const roiPerMonth = roiPerDay * 30
@@ -80,14 +83,14 @@ const useFarms = () => {
                     pid: Number(pool.id),
                     pairAddress: pair.id,
                     slpBalance: pool.balance,
-                    sushiRewardPerDay: rewardPerDay,
+                    swipeRewardPerDay: rewardPerDay,
                     liquidityPair: pair,
                     roiPerBlock,
                     roiPerHour,
                     roiPerDay,
                     roiPerMonth,
                     roiPerYear,
-                    rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+                    rewardPerThousand: 1 * roiPerDay * (1000 / sxpPrice),
                     tvl: liquidityPosition?.liquidityTokenBalance
                         ? (pair.reserveUSD / pair.totalSupply) * liquidityPosition.liquidityTokenBalance
                         : 0.1
@@ -130,7 +133,7 @@ const useFarms = () => {
                 const blocksPerHour = 3600 / Number(averageBlockTime)
                 const rewardPerBlock = pair?.rewardPerBlock
 
-                const sushiRewardPerDay = rewardPerBlock ? rewardPerBlock * blocksPerHour * 24 : 0
+                const swipeRewardPerDay = rewardPerBlock ? rewardPerBlock * blocksPerHour * 24 : 0
 
                 return {
                     ...pool,
@@ -148,7 +151,7 @@ const useFarms = () => {
                         },
                         asset: { id: pair?.asset, symbol: pair?.assetSymbol, decimals: pair?.assetDecimals }
                     },
-                    sushiRewardPerDay: sushiRewardPerDay,
+                    swipeRewardPerDay: swipeRewardPerDay,
                     roiPerYear: pair?.roiPerYear,
                     totalAssetStaked: pair?.totalAssetStaked
                         ? pair?.totalAssetStaked / Math.pow(10, pair?.assetDecimals)
@@ -164,8 +167,9 @@ const useFarms = () => {
     useEffect(() => {
         const fetchData = async () => {
             if (chainId === ChainId.MAINNET || !account) {
-                const results = await Promise.all([fetchSLPFarms(), fetchKMPFarms()])
-                const combined = _.concat(results[0], results[1])
+                // const results = await Promise.all([fetchSLPFarms(), fetchKMPFarms()])
+                // const combined = _.concat(results[0], results[1])
+                const combined = await fetchSLPFarms()
                 const sorted = orderBy(combined, ['pid'], ['desc'])
                 setFarms(sorted)
             } else {
@@ -173,7 +177,7 @@ const useFarms = () => {
             }
         }
         fetchData()
-    }, [account, chainId, fetchKMPFarms, fetchSLPFarms])
+    }, [account, chainId/*, fetchKMPFarms*/, fetchSLPFarms])
 
     return farms
 }

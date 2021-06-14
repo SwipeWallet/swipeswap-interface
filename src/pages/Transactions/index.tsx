@@ -44,7 +44,7 @@ export default function Transactions() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Transactions`)} | Sushi</title>
+                <title>{i18n._(t`Transactions`)} | Swipe</title>
             </Helmet>
 
             {/* <div className="w-full max-w-2xl">

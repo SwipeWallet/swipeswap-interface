@@ -2,29 +2,29 @@ import { ChainId } from '@swipewallet/swipeswap-sdk'
 import React from 'react'
 import { Redirect, Route, RouteComponentProps, useLocation, Switch } from 'react-router-dom'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import Connect from './kashi/pages/Connect'
-import BorrowMarkets from './kashi/pages/Markets/Borrow'
-import CreateMarkets from './kashi/pages/Markets/Create'
-import LendMarkets from './kashi/pages/Markets/Lending'
-import BorrowPair from './kashi/pages/Pair/Borrow'
-import LendPair from './kashi/pages/Pair/Lend'
+// import Connect from './kashi/pages/Connect'
+// import BorrowMarkets from './kashi/pages/Markets/Borrow'
+// import CreateMarkets from './kashi/pages/Markets/Create'
+// import LendMarkets from './kashi/pages/Markets/Lending'
+// import BorrowPair from './kashi/pages/Pair/Borrow'
+// import LendPair from './kashi/pages/Pair/Lend'
 import AddLiquidity from './pages/AddLiquidity'
 import {
     RedirectDuplicateTokenIds,
     RedirectOldAddLiquidityPathStructure,
     RedirectToAddLiquidity
 } from './pages/AddLiquidity/redirects'
-import Bento from './pages/BentoBox'
-import BentoBalances from './pages/BentoBox/Balances'
-import Migrate from './pages/Migrate'
+// import Bento from './pages/BentoBox'
+// import BentoBalances from './pages/BentoBox/Balances'
+// import Migrate from './pages/Migrate'
 import Pool from './pages/Pool'
 import PoolFinder from './pages/PoolFinder'
 import RemoveLiquidity from './pages/RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './pages/RemoveLiquidity/redirects'
 import Saave from './pages/Saave'
-import SushiBar from './pages/SushiBar'
-import SushiBarTransactions from './pages/SushiBar/SushiBarTransactions'
-import SushiBarTips from './pages/SushiBar/Tips'
+// import SushiBar from './pages/SushiBar'
+// import SushiBarTransactions from './pages/SushiBar/SushiBarTransactions'
+// import SushiBarTips from './pages/SushiBar/Tips'
 import Trade from './pages/Trade'
 import Swap from './pages/Swap'
 import {
@@ -34,7 +34,7 @@ import {
     RedirectToSwap
 } from './pages/Swap/redirects'
 import Tools from './pages/Tools'
-import Vesting from './pages/Vesting'
+// import Vesting from './pages/Vesting'
 import Yield from './pages/Yield'
 //import MasterChefV1 from './pages/Yield/masterchefv1'
 //import MasterChefV1Debug from './pages/Yield/masterchefv1/debug'
@@ -46,13 +46,13 @@ function Routes(): JSX.Element {
     const { chainId } = useActiveWeb3React()
     return (
         <Switch>
-            <PublicRoute exact path="/connect" component={Connect} />
+            {/* <PublicRoute exact path="/connect" component={Connect} /> */}
             {/* BentoApps */}
-            <Route exact strict path="/bento" component={Bento} />
-            <WalletRoute exact strict path="/bento/balances" component={BentoBalances} />
+            {/* <Route exact strict path="/bento" component={Bento} />
+            <WalletRoute exact strict path="/bento/balances" component={BentoBalances} /> */}
 
             {/* Kashi */}
-            <Route
+            {/* <Route
                 exact
                 strict
                 path="/bento/kashi"
@@ -62,7 +62,7 @@ function Routes(): JSX.Element {
             <WalletRoute exact strict path="/bento/kashi/borrow" component={BorrowMarkets} />
             <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
             <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
-            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} />
+            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} /> */}
 
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
@@ -72,20 +72,20 @@ function Routes(): JSX.Element {
             {/* {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/yield/debug/:address" component={MasterChefV1Debug} />
             )} */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />}
+            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />} */}
 
             {/* Migrate */}
-            {(chainId === ChainId.MAINNET || chainId === ChainId.BSC || chainId === ChainId.MATIC) && (
+            {/* {(chainId === ChainId.MAINNET || chainId === ChainId.BSC || chainId === ChainId.MATIC) && (
                 <Route exact strict path="/migrate" component={Migrate} />
-            )}
+            )} */}
 
             {/* SushiBar Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
+            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/sushibar/transactions" component={SushiBarTransactions} />
             )}
             {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />} */}
             {/* Tools */}
             {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />}

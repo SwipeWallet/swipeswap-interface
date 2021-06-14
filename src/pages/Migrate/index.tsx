@@ -21,7 +21,7 @@ import Typography from 'components/Typography'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
-import { useSushiRollContract } from 'hooks/useContract'
+import { useSwipeRollContract } from 'hooks/useContract'
 
 const ZERO = JSBI.BigInt(0)
 
@@ -167,7 +167,7 @@ const MigrateButtons = ({ state, exchange }: { state: MigrateState; exchange: st
     const { i18n } = useLingui()
 
     const [error, setError] = useState<MetamaskError>({})
-    const sushiRollContract = useSushiRollContract(
+    const sushiRollContract = useSwipeRollContract(
         state.selectedLPToken?.version ? state.selectedLPToken?.version : undefined
     )
     console.log(
@@ -311,7 +311,7 @@ const MigrateV2 = () => {
     return (
         <>
             <Helmet>
-                <title>Migrate LP tokens | Sushi</title>
+                <title>Migrate LP tokens | Swipe</title>
                 <meta name="description" content="Migrate LP tokens to Sushi LP tokens" />
             </Helmet>
 

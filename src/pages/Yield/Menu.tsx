@@ -14,7 +14,7 @@ const Menu = ({ section, setSection }: any) => {
                 >
                     Your Staked Farms
                 </div>
-                <div
+                {/* <div
                     className={`cursor-pointer bg-dark-900 rounded flex items-center px-4 py-6 border border-transparent ${section ===
                         'all' && 'border-gradient'}`}
                     onClick={() => {
@@ -22,8 +22,8 @@ const Menu = ({ section, setSection }: any) => {
                     }}
                 >
                     All Yield Farms
-                </div>
-                <div
+                </div> */}
+                {/* <div
                     className={`cursor-pointer bg-dark-900 rounded flex items-center px-4 py-6 border border-transparent ${section ===
                         'kmp' && 'border-gradient'}`}
                     onClick={() => {
@@ -31,7 +31,7 @@ const Menu = ({ section, setSection }: any) => {
                     }}
                 >
                     Lending Yield Farms
-                </div>
+                </div> */}
                 <div
                     className={`cursor-pointer bg-dark-900 rounded flex items-center px-4 py-6 border border-transparent ${section ===
                         'slp' && 'border-gradient'}`}
@@ -41,7 +41,7 @@ const Menu = ({ section, setSection }: any) => {
                 >
                     Liquidity Yield Farms
                 </div>
-                <div
+                {/* <div
                     className={`cursor-pointer bg-dark-900 rounded flex justify-between items-center px-4 py-6 border border-transparent ${section ===
                         'mcv2' && 'border-gradient'}`}
                     onClick={() => {
@@ -50,7 +50,7 @@ const Menu = ({ section, setSection }: any) => {
                 >
                     Double Yield Farms
                     <Badge color="blue">New</Badge>
-                </div>
+                </div> */}
                 {/* <Card
                 className="h-full bg-dark-900"
                 backgroundImage={DepositGraphic}
