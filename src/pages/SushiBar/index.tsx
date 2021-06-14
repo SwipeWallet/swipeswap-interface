@@ -7,7 +7,7 @@ import APRCard from './APRCard'
 import StakeCard from './StakeCard'
 import BalanceCard from './BalanceCard'
 import { ChainId } from '@swipewallet/swipeswap-sdk'
-import { SUSHI, XSUSHI } from '../../constants'
+import { SWIPE, XSUSHI } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 
 const mockData = {
@@ -18,7 +18,7 @@ const mockData = {
 export default function XSushi() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(SWIPE[ChainId.MAINNET]?.address ?? '')
     const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
 
     return (

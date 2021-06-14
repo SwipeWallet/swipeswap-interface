@@ -49,6 +49,24 @@ export const SUSHI: ChainTokenMap = {
     [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC', 18, 'SUSHI', 'SushiToken')
 }
 
+// SWIPE
+export const SWIPE: ChainTokenMap = {
+    [ChainId.MAINNET]: new Token(
+        ChainId.MAINNET,
+        '0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9',
+        18,
+        'SXP',
+        'SwipeToken'
+    ),
+    [ChainId.ROPSTEN]: new Token(
+        ChainId.ROPSTEN,
+        '0xd57022d5cb065505093e2c4bbf7d683d2335ab6a',
+        18,
+        'SXP',
+        'SwipeToken'
+    ),
+}
+
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
     // [UNI_ADDRESS]: 'UNI',
     [TIMELOCK_ADDRESS]: 'Timelock'
@@ -270,7 +288,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
     [ChainId.MAINNET]: [
-        [SUSHI[ChainId.MAINNET] as Token, WETH[ChainId.MAINNET]],
+        [SWIPE[ChainId.MAINNET] as Token, WETH[ChainId.MAINNET]],
         [
             new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
             new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin')

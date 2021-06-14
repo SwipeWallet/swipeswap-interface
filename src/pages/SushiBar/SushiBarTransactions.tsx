@@ -4,7 +4,7 @@ import BalanceCard from './BalanceCard'
 import { Button } from '../../components'
 import { ChevronLeft } from 'react-feather'
 import { ChainId } from '@swipewallet/swipeswap-sdk'
-import { SUSHI, XSUSHI } from '../../constants'
+import { SWIPE, XSUSHI } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 import { useHistory } from 'react-router-dom'
 import TransactionsPanel from './TransactionsPanel'
@@ -17,7 +17,7 @@ const mock = {
 export default function SushiBarTransactions() {
     const theme = useContext(ThemeContext)
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(SWIPE[ChainId.MAINNET]?.address ?? '')
     const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
 
     const history = useHistory()
