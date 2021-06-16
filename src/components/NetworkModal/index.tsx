@@ -143,14 +143,14 @@ export default function NetworkModal(): JSX.Element | null {
             <div className="flex flex-col space-y-5 overflow-y-auto">
                 {[
                     ChainId.MAINNET,
-                    ChainId.FANTOM,
+                    // ChainId.FANTOM,
                     ChainId.BSC,
-                    ChainId.MATIC,
-                    ChainId.HECO,
-                    ChainId.XDAI,
-                    ChainId.HARMONY,
-                    ChainId.AVALANCHE,
-                    ChainId.OKEX
+                    // ChainId.MATIC,
+                    // ChainId.HECO,
+                    // ChainId.XDAI,
+                    // ChainId.HARMONY,
+                    // ChainId.AVALANCHE,
+                    // ChainId.OKEX
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {
                         return (
